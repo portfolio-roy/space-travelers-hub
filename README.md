@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>React Bookstore</b></h3>
+  <h3><b>Space Traveler's Hub</b></h3>
 </div>
 
 # 📗 Table of Contents
@@ -24,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 React Bookstore <a name="about-project"></a>
+# 📖 Space Traveler's Hub <a name="about-project"></a>
 
-<b>React Bookstore</b> is a website for Mathematics lovers. The website is built with React JS.
+<b>Space Traveler's Hub</b> is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -41,7 +41,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- #### [Live demo](https://react-bookstore.utsargo.tech)
+- #### Coming soon, stay tuned...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,7 +79,7 @@ Clone this repository using the GitHub link provided below.
 In the terminal, go to your file directory and run this command.
 
 ```
-$ git clone git@github.com:portfolio-roy/react-bookstore.git
+$ git clone <THIS REPOSITORY>
 ```
 
 ### Usage
@@ -127,6 +127,12 @@ $ npm run deploy
 - Twitter: [@royutsargo](https://twitter.com/royutsargo)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/utsargo-roy/)
 
+👤 **First Last**
+
+- GitHub: [@your_username](YOUR GITHUB LINK)
+- Twitter: [@your_username](YOUR TWITTER LINK)
+- LinkedIn: [LinkedIn](YOUR LINKEDIN PROFILE LINK)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -145,7 +151,8 @@ Give a ⭐️ if you like this project!
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- N/A
+- Book rockets
+- Join selected space missions
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- LICENSE -->
