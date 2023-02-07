@@ -10,7 +10,12 @@ const Navigation = () => (
           <img className="logo" src={logo} alt="logo" />
           <h3> Space Travelers&apos; Hub</h3>
         </Link>
-        <ul className="main-nav">
+        <ul className="main-nav d-flex">
+          <li className="nav-item">
+            <NavLink to="/rockets" className={({ isActive }) => (isActive ? 'active' : 'link')}>
+              Rockets
+            </NavLink>
+          </li>
           <li className="nav-item">
             <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : 'link')}>
               My Profile
