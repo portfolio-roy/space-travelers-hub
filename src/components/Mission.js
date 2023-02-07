@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Missions = () => (
+const Mission = () => (
   <div>
     <h1>Missions Component</h1>
   </div>
 );
 
-export default Missions;
+export default Mission;
