@@ -1,12 +1,10 @@
 import React from 'react';
 import Mission from '../components/Mission';
 
-const Missions = () => {
-  return (
-    <div>
-      <Mission />
-    </div>
-  );
-}
+const Missions = () => (
+  <div>
+    <Mission />
+  </div>
+);
 
 export default Missions;

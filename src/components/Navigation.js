@@ -14,7 +14,7 @@ const Navigation = () => (
           <li className="nav-item">
             <NavLink
               to="/rockets"
-              className={({ isActive }) => (isActive ? "active" : "link")}
+              className={({ isActive }) => (isActive ? 'active' : 'link')}
             >
               Rockets
             </NavLink>
@@ -22,7 +22,7 @@ const Navigation = () => (
           <li className="nav-item">
             <NavLink
               to="/missions"
-              className={({ isActive }) => (isActive ? "active" : "link")}
+              className={({ isActive }) => (isActive ? 'active' : 'link')}
             >
               Missions
             </NavLink>
@@ -30,7 +30,7 @@ const Navigation = () => (
           <li className="nav-item">
             <NavLink
               to="/profile"
-              className={({ isActive }) => (isActive ? "active" : "link")}
+              className={({ isActive }) => (isActive ? 'active' : 'link')}
             >
               My Profile
             </NavLink>
