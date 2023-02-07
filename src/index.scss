@@ -4,6 +4,12 @@
 
 .brand {
   display: flex;
+  align-items: center;
+}
+
+.brand > span {
+  font-size: 1rem;
+  font-weight: bolder;
 }
 
 .logo {
