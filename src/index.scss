@@ -35,6 +35,19 @@
   }
 }
 
+.rockets {
+  gap: 24px;
+}
+
+.rocket {
+  gap: 16px;
+}
+
+.rocket-image {
+  width: 20%;
+  aspect-ratio: 4/3;
+}
+
 .active {
   text-decoration: underline !important;
 }
