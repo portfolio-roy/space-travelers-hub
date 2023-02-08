@@ -1,29 +1,73 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const MISSIONS_URL = 'https://api.spacexdata.com/v3/missions';
+const baseURL = 'https://api.spacexdata.com/v3/missions';
 
-const FETCH_MISSIONS = 'space-travelers-hub/missions/fetchMissions';
+const getAllMissions = async () => {
+  let payload;
+  try {
+    const response = await fetch(baseURL);
+    const missions = await response.json();
+    payload = missions.map((mission) => (
+      {
+        id: mission.mission_id,
+        name: mission.mission_name,
+        description: mission.description,
+      }
+    ));
+  } catch (error) {
+    return error;
+  }
+  return payload;
+};
 
-const initialState = [];
+const missionsService = {
+  getAllMissions,
+};
 
-export const fetchMissions = createAsyncThunk(FETCH_MISSIONS, async () => {
-  const response = await fetch(MISSIONS_URL);
-  const { data } = await response.json();
-  const missions = data.map((mission) => ({
-    name: mission.mission_name,
-    id: mission.mission_id,
-    description: mission.description,
-    membership: true,
-  }));
-  console.log('From store', missions);
-  // return missions;
-});
+const FETCH_MISSIONS = 'FETCH_MISSIONS';
+const JOIN_MISSION = 'JOIN_MISSION';
 
-export default function missionsReducer(state = initialState, action) {
+const initialState = {
+  status: 'idle',
+  missions: [],
+};
+
+const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case `${FETCH_MISSIONS}/fulfilled`:
-      return [...state, action.payload];
+    case FETCH_MISSIONS:
+      return {
+        ...state,
+        status: 'succeeded',
+        missions: action.payload,
+      };
+
+    case JOIN_MISSION: {
+      const clone = [...state.missions];
+      const updatedMissions = clone.map((item) => {
+        if (item.id !== action.payload.id) {
+          return item;
+        }
+        return { ...item, isReserved: !item.isReserved };
+      });
+
+      return {
+        ...state,
+        missions: updatedMissions,
+      };
+    }
+
     default:
       return state;
   }
-}
+};
+
+export const getMissionsAsync = createAsyncThunk(FETCH_MISSIONS, async (arg, thunkAPI) => {
+  const payload = await missionsService.getAllMissions();
+  thunkAPI.dispatch({ type: FETCH_MISSIONS, payload });
+});
+
+export const joinMission = (payload) => ({
+  type: JOIN_MISSION,
+  payload,
+});
+export default missionsReducer;

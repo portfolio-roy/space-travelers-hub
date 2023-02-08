@@ -14,6 +14,7 @@ function App() {
           <Route path="/missions" element={<Missions />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
+        <Missions />
       </BrowserRouter>
     </div>
   );
