@@ -6,18 +6,23 @@ const FETCH_MISSIONS = 'space-travelers-hub/missions/fetchMissions';
 
 const initialState = [];
 
-// Add reducer
+export const fetchMissions = createAsyncThunk(FETCH_MISSIONS, async () => {
+  const response = await fetch(MISSIONS_URL);
+  const { data } = await response.json();
+  const missions = data.map((mission) => ({
+    name: mission.mission_name,
+    id: mission.mission_id,
+    description: mission.description,
+    membership: true,
+  }));
+  console.log('From store', missions);
+  // return missions;
+});
+
 export default function missionsReducer(state = initialState, action) {
   switch (action.type) {
     case `${FETCH_MISSIONS}/fulfilled`:
-      return Object.keys(action.payload).map((key) => {
-        const { name, description } = action.payload[key][0];
-        return {
-          item_id: key,
-          name,
-          description,
-        };
-      });
+      return [...state, action.payload];
     default:
       return state;
   }
