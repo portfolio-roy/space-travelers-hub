@@ -12,12 +12,26 @@ const Navigation = () => (
         </Link>
         <ul className="main-nav d-flex">
           <li className="nav-item">
-            <NavLink to="/rockets" className={({ isActive }) => (isActive ? 'active' : 'link')}>
+            <NavLink
+              to="/rockets"
+              className={({ isActive }) => (isActive ? 'active' : 'link')}
+            >
               Rockets
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : 'link')}>
+            <NavLink
+              to="/missions"
+              className={({ isActive }) => (isActive ? 'active' : 'link')}
+            >
+              Missions
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => (isActive ? 'active' : 'link')}
+            >
               My Profile
             </NavLink>
           </li>
@@ -25,7 +39,6 @@ const Navigation = () => (
       </nav>
     </div>
   </header>
-
 );
 
 export default Navigation;
