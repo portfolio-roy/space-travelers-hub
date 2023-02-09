@@ -12,13 +12,18 @@ const Rocket = ({
   return (
     <div className="rocket d-flex align-start">
       <img className="rocket-image" src={image} alt={title} />
-      <div className="title-desc">
-        <h3>{title}</h3>
-        <p>
-          <span id={reserved ? 'reserved' : 'not-reserved'}>{reservedtext}</span>
+      <div className="rocket-info d-flex flex-column">
+        <h3 className="rocket-title">
+          {title}
+
+        </h3>
+
+        <p className="rocket-description">
+          <span className={reserved ? 'reserved' : 'not-reserved'}>{reservedtext}</span>
+
           {description}
         </p>
-        <button id="booking" type="button" onClick={bookingHandler}>Reserve Rocket</button>
+        <button className="booking" type="button" onClick={bookingHandler}>Reserve Rocket</button>
       </div>
     </div>
   );
