@@ -5,10 +5,14 @@ import { fetchRockets } from '../redux/rockets/rocket';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const rockets = useSelector((state) => state.rockets);
+  const data = useSelector((state) => state.rockets);
+  const { status, rockets } = data;
+
   useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
+    if (status === 'idle') {
+      dispatch(fetchRockets());
+    }
+  }, [dispatch, status]);
   return (
     <main className="d-flex flex-column align-center col-md-12">
       <div className="container rockets d-flex flex-column">
