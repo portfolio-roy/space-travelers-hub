@@ -13,7 +13,7 @@ const Navigation = () => (
         <ul className="main-nav d-flex">
           <li className="nav-item">
             <NavLink
-              to="/rockets"
+              to="/"
               className={({ isActive }) => (isActive ? 'active' : 'link')}
             >
               Rockets
