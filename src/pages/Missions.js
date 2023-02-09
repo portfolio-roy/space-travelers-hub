@@ -13,7 +13,7 @@ const Missions = () => {
     }
   }, [dispatch, status]);
 
-  // console.log(missions);
+  console.log(missions);
 };
 
 export default Missions;
