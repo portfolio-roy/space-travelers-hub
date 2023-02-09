@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const FETCH_ROCKETS = ' FETCH_ROCKETS';
+const BOOK_ROCKET = 'BOOK_ROCKET';
 const initialState = [];
 const url = 'https://api.spacexdata.com/v3/rockets';
 
@@ -14,6 +15,7 @@ export const fetchRockets = createAsyncThunk(
       name: item.rocket_name,
       description: item.description,
       image: item.flickr_images[0],
+      reserved: false,
     }));
     dispatch({
       type: FETCH_ROCKETS,
@@ -22,9 +24,23 @@ export const fetchRockets = createAsyncThunk(
   },
 );
 
+export const bookRocket = (id) => (dispatch, getState) => {
+  const state = getState().rockets;
+  const newState = state.map((rocket) => {
+    if (rocket.id !== id) return rocket;
+    const reserved = !rocket.reserved;
+    return { ...rocket, reserved };
+  });
+  dispatch({
+    type: BOOK_ROCKET,
+    payload: newState,
+  });
+};
 const rocketReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
+      return action.payload;
+    case BOOK_ROCKET:
       return action.payload;
     default:
       return state;
