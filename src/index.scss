@@ -1,3 +1,4 @@
+/* stylelint-disable at-rule-no-unknown */
 * {
   box-sizing: border-box;
 }
@@ -41,11 +42,70 @@
 
 .rocket {
   gap: 16px;
+
+  .button {
+    width: max-content;
+    padding: 8px;
+    font-size: 16px;
+    color: white;
+    border: none !important;
+    border-radius: 4px;
+    box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.4);
+    transition: 500ms ease;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.8);
+    }
+  }
+
+  .booked {
+    @extend .button;
+
+    background-color: rgb(0, 106, 255);
+
+    &:hover {
+      background-color: rgb(4, 94, 220);
+    }
+  }
+
+  .cancelled {
+    @extend .button;
+
+    color: black;
+    background-color: rgb(195, 194, 194);
+
+    &:hover {
+      background-color: rgb(58, 57, 57);
+      color: white;
+    }
+  }
+}
+
+.rocket-title {
+  margin-top: 0;
 }
 
 .rocket-image {
-  width: 20%;
+  height: 220px;
   aspect-ratio: 4/3;
+}
+
+.rocket-description {
+  line-height: 1.8;
+}
+
+.reserved {
+  margin-right: 8px;
+  padding: 4px 8px;
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.not-reserved {
+  display: none;
 }
 
 .active {
