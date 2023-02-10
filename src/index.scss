@@ -128,12 +128,14 @@ main {
 .profile-inner {
   gap: 32px;
 }
+
 .rocket-card,
 .mission-card {
   gap: 16px;
   background-color: rgba(204, 204, 204, 0.752);
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.4);
+
   .rocket-image {
     height: 40px !important;
     aspect-ratio: 1/1;
@@ -145,10 +147,12 @@ main {
     margin: 0;
   }
 }
+
 .mission-card {
   height: 40px;
   padding: 0 8px;
 }
+
 .rocket-list,
 .mission-list {
   gap: 8px;
@@ -207,13 +211,16 @@ main {
   .rocket {
     flex-direction: column;
   }
+
   .rocket-image {
     width: 100%;
     height: auto;
   }
+
   .profile-inner {
     flex-direction: column;
   }
+
   .container {
     max-width: 540px;
   }
