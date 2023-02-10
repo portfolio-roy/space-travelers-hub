@@ -79,7 +79,7 @@ Clone this repository using the GitHub link provided below.
 In the terminal, go to your file directory and run this command.
 
 ```
-$ git clone <THIS REPOSITORY>
+$ git clone git@github.com:portfolio-roy/space-travelers-hub.git
 ```
 
 ### Usage
