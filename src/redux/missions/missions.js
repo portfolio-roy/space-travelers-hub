@@ -1,27 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-const baseURL = 'https://api.spacexdata.com/v3/missions';
-
-const getAllMissions = async () => {
-  let payload;
-  try {
-    const response = await fetch(baseURL);
-    const missions = await response.json();
-    payload = missions.map((mission) => ({
-      id: mission.mission_id,
-      name: mission.mission_name,
-      description: mission.description,
-    }));
-    console.log(missions);
-  } catch (error) {
-    return error;
-  }
-  return payload;
-};
-
-const missionsService = {
-  getAllMissions,
-};
+import missionsService from '../../getters/getMissions';
 
 const FETCH_MISSIONS = 'FETCH_MISSIONS';
 const JOIN_MISSION = 'JOIN_MISSION';
@@ -60,13 +38,10 @@ const missionsReducer = (state = initialState, action) => {
   }
 };
 
-export const getMissionsAsync = createAsyncThunk(
-  FETCH_MISSIONS,
-  async (arg, thunkAPI) => {
-    const payload = await missionsService.getAllMissions();
-    thunkAPI.dispatch({ type: FETCH_MISSIONS, payload });
-  },
-);
+export const getMissionsAsync = createAsyncThunk(FETCH_MISSIONS, async (arg, thunkAPI) => {
+  const payload = await missionsService.getAllMissions();
+  thunkAPI.dispatch({ type: FETCH_MISSIONS, payload });
+});
 
 export const joinMission = (payload) => ({
   type: JOIN_MISSION,

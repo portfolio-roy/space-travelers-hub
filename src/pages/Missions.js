@@ -1,19 +1,6 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getMissionsAsync } from '../redux/missions/missions';
+import React from 'react';
+import MissionsTable from '../components/Missions';
 
-const Missions = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.missions);
-  const { status, missions } = data;
-
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(getMissionsAsync());
-    }
-  }, [dispatch, status]);
-
-  console.log(missions);
-};
+const Missions = () => <MissionsTable />;
 
 export default Missions;
