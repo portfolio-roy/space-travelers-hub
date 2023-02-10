@@ -12,8 +12,6 @@ const Missions = () => {
     }
   }, [dispatch, missions.length]);
 
-  // const data = useSelector((state) => state.missions);
-
   return (
     <section className="missions-container">
       <table className="table-header">
@@ -27,7 +25,7 @@ const Missions = () => {
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <Mission key={mission} mission={mission} />
+            <Mission key={mission} mission={mission} name={mission.mission_name} />
           ))}
         </tbody>
       </table>
