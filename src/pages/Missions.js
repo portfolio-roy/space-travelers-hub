@@ -1,19 +1,47 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMissionsAsync } from '../redux/missions/missions';
+import { getMissions } from '../redux/missions/missions';
+import Mission from '../components/Mission';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.missions);
-  const { status, missions } = data;
-
+  const missions = useSelector((state) => state.missions);
   useEffect(() => {
-    if (status === 'idle') {
-      dispatch(getMissionsAsync());
+    if (missions.length === 0) {
+      dispatch(getMissions());
     }
-  }, [dispatch, status]);
+  }, [dispatch, missions.length]);
 
-  console.log(missions);
+  // const data = useSelector((state) => state.missions);
+
+  return (
+    <section className="missions-container d-flex align-start">
+      <table className="table-header">
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <Mission key={mission} mission={mission} />
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+  // const { missions } = data;
+
+  // useEffect(() => {
+  //   if (status === 'idle') {
+  //     dispatch(getMissions());
+  //   }
+  // }, [dispatch, status]);
+
+  // console.log(missions);
 };
 
 export default Missions;

@@ -124,6 +124,12 @@ main {
   display: none;
 }
 
+// Missions
+.missions-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
 // My profile
 .rocket-card {
   gap: 16px;
