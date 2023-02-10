@@ -124,52 +124,33 @@ main {
   display: none;
 }
 
-// Missions
-table {
-  width: 80%;
-  margin: 3% 10%;
-  border: 1px solid #ddd;
-  border-collapse: collapse;
-
-  th {
-    height: 50px;
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    font-size: 20px;
-    border: 1px solid #ddd;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
-  td {
-    font-size: 16px;
-    padding: 4px 6px;
-    border: 1px solid #ddd;
-  }
-}
-
 // My profile
-.rocket-card {
+.profile-inner {
+  gap: 32px;
+}
+.rocket-card,
+.mission-card {
   gap: 16px;
   background-color: rgba(204, 204, 204, 0.752);
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.4);
-
   .rocket-image {
-    height: 40px;
+    height: 40px !important;
     aspect-ratio: 1/1;
     border-radius: 8px 0 0 8px;
+    width: auto !important;
   }
 
   h4 {
     margin: 0;
   }
 }
-
-.rocket-list {
+.mission-card {
+  height: 40px;
+  padding: 0 8px;
+}
+.rocket-list,
+.mission-list {
   gap: 8px;
 }
 // helpers
@@ -221,7 +202,18 @@ table {
   align-items: stretch;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 640px) {
+  .navigation,
+  .rocket {
+    flex-direction: column;
+  }
+  .rocket-image {
+    width: 100%;
+    height: auto;
+  }
+  .profile-inner {
+    flex-direction: column;
+  }
   .container {
     max-width: 540px;
   }

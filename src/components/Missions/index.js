@@ -20,17 +20,19 @@ const MissionsTable = () => {
   };
 
   return (
-    <table cellSpacing="0">
-      <thead>
-        <tr>
-          <th scope="col">Mission</th>
-          <th scope="col">Description</th>
-          <th scope="col">Status</th>
-          <th scope="col" aria-label="empty-th" />
-        </tr>
-      </thead>
-      <tbody>
-        {
+    <main className="d-flex flex-column align-center col-md-12">
+      <div className="container d-flex flex-column align-center">
+        <table cellSpacing="0">
+          <thead>
+            <tr>
+              <th scope="col">Mission</th>
+              <th scope="col">Description</th>
+              <th scope="col">Status</th>
+              <th scope="col" aria-label="empty-th" />
+            </tr>
+          </thead>
+          <tbody>
+            {
           missions.map((mission) => {
             const {
               id, name, description, isReserved,
@@ -58,8 +60,10 @@ const MissionsTable = () => {
             );
           })
         }
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+    </main>
   );
 };
 
