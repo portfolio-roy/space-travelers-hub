@@ -15,7 +15,7 @@ const Missions = () => {
   // const data = useSelector((state) => state.missions);
 
   return (
-    <section className="missions-container d-flex align-start">
+    <section className="missions-container">
       <table className="table-header">
         <thead>
           <tr>
@@ -33,15 +33,6 @@ const Missions = () => {
       </table>
     </section>
   );
-  // const { missions } = data;
-
-  // useEffect(() => {
-  //   if (status === 'idle') {
-  //     dispatch(getMissions());
-  //   }
-  // }, [dispatch, status]);
-
-  // console.log(missions);
 };
 
 export default Missions;
