@@ -41,7 +41,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- #### Coming soon, stay tuned...
+- #### [Live link](https://space-travelers-hub-zxf9.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,13 +127,11 @@ $ npm run deploy
 - Twitter: [@royutsargo](https://twitter.com/royutsargo)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/utsargo-roy/)
 
-
 👤 **Winfred Edube**
 
 - GitHub: [@edubew](https://github.com/edubew)
 - Twitter: [@edube_winne](https://twitter.com/edube_winne)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/winfred-edube-9820a422a/)
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
