@@ -127,11 +127,13 @@ $ npm run deploy
 - Twitter: [@royutsargo](https://twitter.com/royutsargo)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/utsargo-roy/)
 
-👤 **First Last**
 
-- GitHub: [@your_username](YOUR GITHUB LINK)
-- Twitter: [@your_username](YOUR TWITTER LINK)
-- LinkedIn: [LinkedIn](YOUR LINKEDIN PROFILE LINK)
+👤 **Winfred Edube**
+
+- GitHub: @edubew
+- Twitter: @edube_winne
+- LinkedIn: [LinkedIn](https://linkedin.com/in/winfred-edube-9820a422a/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
