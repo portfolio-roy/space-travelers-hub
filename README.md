@@ -130,8 +130,8 @@ $ npm run deploy
 
 👤 **Winfred Edube**
 
-- GitHub: @edubew
-- Twitter: @edube_winne
+- GitHub: [@edubew](https://github.com/edubew)
+- Twitter: [@edube_winne](https://twitter.com/edube_winne)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/winfred-edube-9820a422a/)
 
 
