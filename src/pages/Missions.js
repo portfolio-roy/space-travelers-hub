@@ -1,36 +1,6 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getMissions } from '../redux/missions/missions';
-import Mission from '../components/Mission';
+import React from 'react';
+import MissionsTable from '../components/Missions';
 
-const Missions = () => {
-  const dispatch = useDispatch();
-  const missions = useSelector((state) => state.missions);
-  useEffect(() => {
-    if (missions.length === 0) {
-      dispatch(getMissions());
-    }
-  }, [dispatch, missions.length]);
-
-  return (
-    <section className="missions-container">
-      <table className="table-header">
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th> </th>
-          </tr>
-        </thead>
-        <tbody>
-          {missions.map((mission) => (
-            <Mission key={mission} mission={mission} name={mission.mission_name} />
-          ))}
-        </tbody>
-      </table>
-    </section>
-  );
-};
+const Missions = () => <MissionsTable />;
 
 export default Missions;
